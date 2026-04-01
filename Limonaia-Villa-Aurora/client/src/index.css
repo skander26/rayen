@@ -1,0 +1,6 @@
+/* Minimal base; primary styling lives in styled-components GlobalStyles */
+html,
+body,
+#root {
+  min-height: 100%;
+}

@@ -1,0 +1,11 @@
+# Netlify configuration for Limonaia Villa Aurora
+
+[build]
+  command = "npm run build"
+  publish = "client/dist"
+  base = "client"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
