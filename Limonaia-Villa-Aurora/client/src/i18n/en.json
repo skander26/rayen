@@ -82,6 +82,11 @@
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode"
   },
+  "whatsapp": {
+    "tooltip": "Chat on WhatsApp",
+    "ariaLabel": "Contact us on WhatsApp",
+    "message": "Hello, I'd like to get in touch."
+  },
   "meta": {
     "description": "Limonaia Villa Aurora — a luxury private villa near Florence. Book your stay.",
     "title": "Limonaia Villa Aurora · Florence"

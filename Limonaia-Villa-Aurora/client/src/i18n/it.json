@@ -82,6 +82,11 @@
     "switchToLight": "Passa alla modalità chiara",
     "switchToDark": "Passa alla modalità scura"
   },
+  "whatsapp": {
+    "tooltip": "Chatta su WhatsApp",
+    "ariaLabel": "Contattaci su WhatsApp",
+    "message": "Salve, vorrei mettermi in contatto."
+  },
   "meta": {
     "description": "Limonaia Villa Aurora — una lussuosa villa privata vicino a Firenze. Prenota il tuo soggiorno.",
     "title": "Limonaia Villa Aurora · Firenze"

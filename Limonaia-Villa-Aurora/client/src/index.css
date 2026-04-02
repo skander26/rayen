@@ -1,4 +1,5 @@
 /* Minimal base; primary styling lives in styled-components GlobalStyles */
+/* Minimal base; primary styling lives in styled-components GlobalStyles */
 html,
 body,
 #root {
@@ -10,4 +11,24 @@ body,
 *::before,
 *::after {
   transition: color 0.2s ease, opacity 0.15s ease;
+}
+
+/* WhatsApp floating button — pulse ring */
+@keyframes wa-pulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  100% { transform: scale(1.75); opacity: 0;   }
+}
+
+/* Respect user motion preference — disables pulse ring */
+@media (prefers-reduced-motion: reduce) {
+  @keyframes wa-pulse {
+    0%, 100% { transform: scale(1); opacity: 0; }
+  }
+}
+
+/* Focus-visible fallback for browsers not handled via onFocus */
+.wa-link:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(37, 211, 102, 0.6),
+    0 8px 32px rgba(37, 211, 102, 0.45) !important;
 }

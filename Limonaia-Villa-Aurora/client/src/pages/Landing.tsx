@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react'
 import styled from 'styled-components'
 import { Header } from '../components/Header'
 import { useTranslation } from 'react-i18next'
+import WhatsAppButton from '../components/ui/WhatsAppButton'
 
 const Hero = lazy(async () => {
   const m = await import('../components/Hero')
@@ -46,6 +47,9 @@ export function Landing() {
         <span>{t('footer.tagline')}</span>
         <small>{t('footer.subTagline')}</small>
       </Footer>
+
+      {/* Fixed floating button — always above all content */}
+      <WhatsAppButton />
     </>
   )
 }

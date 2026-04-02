@@ -75,3 +75,7 @@ export default defineConfig([
 ## i18n / Translations
 
 To add a new language: create `src/i18n/{code}.json` and add it to the resources object in `src/i18n/index.js`.
+
+## WhatsApp Button
+
+To change WhatsApp number, edit `src/config/contact.ts` → `whatsappRaw` field.
