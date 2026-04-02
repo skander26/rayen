@@ -2,10 +2,12 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import styled from 'styled-components'
+import { useTranslation } from 'react-i18next'
 
 const MotionLink = motion.create(Link)
 
 export function FinalCTA() {
+  const { t } = useTranslation()
   const ref = useRef<HTMLElement>(null)
   const inView = useInView(ref, { amount: 0.45, once: false })
 
@@ -18,7 +20,7 @@ export function FinalCTA() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.75 }}
         >
-          Your Florence chapter begins here
+          {t('cta.title')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -26,8 +28,7 @@ export function FinalCTA() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.65, delay: 0.06 }}
         >
-          Reserve Limonaia Villa Aurora — private gardens, curated interiors, and the
-          city’s art within reach.
+          {t('cta.body')}
         </motion.p>
         <CtaWrap>
           <CtaButton
@@ -41,7 +42,7 @@ export function FinalCTA() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            Check availability
+            {t('cta.button')}
           </CtaButton>
         </CtaWrap>
       </Inner>

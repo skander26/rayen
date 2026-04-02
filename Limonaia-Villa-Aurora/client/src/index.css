@@ -4,3 +4,10 @@ body,
 #root {
   min-height: 100%;
 }
+
+/* Smooth language transition */
+*,
+*::before,
+*::after {
+  transition: color 0.2s ease, opacity 0.15s ease;
+}

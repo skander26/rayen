@@ -3,29 +3,31 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import styled from 'styled-components'
 import { imagePaths, fallbacks } from '../constants/images'
 import { ResponsiveImg } from './ResponsiveImg'
+import { useTranslation } from 'react-i18next'
 
 const cards = [
   {
-    title: 'Light & volume',
-    body: 'Tall windows frame the garden; plaster walls breathe with the day.',
+    titleKey: 'about.cards.light.title',
+    bodyKey: 'about.cards.light.body',
     src: imagePaths.about[0],
     fallback: fallbacks.about1,
   },
   {
-    title: 'Crafted calm',
-    body: 'Materials chosen for touch — stone, oak, linen, and still air.',
+    titleKey: 'about.cards.craft.title',
+    bodyKey: 'about.cards.craft.body',
     src: imagePaths.about[1],
     fallback: fallbacks.about2,
   },
 ] as const
 
 const icons = [
-  { label: 'Private pool', src: imagePaths.amenities[0], fb: fallbacks.amenity1 },
-  { label: 'Chef’s kitchen', src: imagePaths.amenities[1], fb: fallbacks.amenity2 },
-  { label: 'Garden limonaia', src: imagePaths.amenities[2], fb: fallbacks.amenity3 },
+  { labelKey: 'about.amenities.pool', src: imagePaths.amenities[0], fb: fallbacks.amenity1 },
+  { labelKey: 'about.amenities.kitchen', src: imagePaths.amenities[1], fb: fallbacks.amenity2 },
+  { labelKey: 'about.amenities.limonaia', src: imagePaths.amenities[2], fb: fallbacks.amenity3 },
 ]
 
 export function About() {
+  const { t } = useTranslation()
   const ref = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -45,7 +47,7 @@ export function About() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            A residence, not a hotel
+            {t('about.title')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -53,9 +55,7 @@ export function About() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           >
-            Every corner is composed for slow mornings and unhurried evenings — a
-            private world minutes from Florence, anchored in Tuscan craft and modern
-            ease.
+            {t('about.body')}
           </motion.p>
         </Intro>
 
@@ -63,17 +63,17 @@ export function About() {
           <Col style={{ x: leftX, y: parallaxY }}>
             {cards.map((c, i) => (
               <Card
-                key={c.title}
+                key={c.titleKey}
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.75, delay: 0.1 * i }}
               >
                 <Thumb whileHover={{ scale: 1.02 }} transition={{ duration: 0.45 }}>
-                  <ResponsiveImg src={c.src} fallback={c.fallback} alt={c.title} />
+                  <ResponsiveImg src={c.src} fallback={c.fallback} alt={t(c.titleKey)} />
                 </Thumb>
-                <h3>{c.title}</h3>
-                <p>{c.body}</p>
+                <h3>{t(c.titleKey)}</h3>
+                <p>{t(c.bodyKey)}</p>
               </Card>
             ))}
           </Col>
@@ -84,19 +84,19 @@ export function About() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.8 }}
             >
-              <SideTitle>Amenities</SideTitle>
+              <SideTitle>{t('about.amenitiesTitle')}</SideTitle>
               <IconGrid>
                 {icons.map((ic) => (
                   <IconTile
-                    key={ic.label}
+                    key={ic.labelKey}
                     whileHover={{ scale: 1.03, y: -2 }}
                     whileTap={{ scale: 0.99 }}
                     transition={{ type: 'spring', stiffness: 380, damping: 22 }}
                   >
                     <IconImg>
-                      <ResponsiveImg src={ic.src} fallback={ic.fb} alt={ic.label} />
+                      <ResponsiveImg src={ic.src} fallback={ic.fb} alt={t(ic.labelKey)} />
                     </IconImg>
-                    <span>{ic.label}</span>
+                    <span>{t(ic.labelKey)}</span>
                   </IconTile>
                 ))}
               </IconGrid>

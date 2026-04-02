@@ -15,6 +15,7 @@ import styled from 'styled-components'
 import { useAppContext } from '../hooks/useAppContext'
 import { imagePaths, fallbacks } from '../constants/images'
 import { ResponsiveImg } from './ResponsiveImg'
+import { useTranslation } from 'react-i18next'
 
 /** Demo availability: odd days of month available (replace with API). */
 function isAvailableDate(d: Date) {
@@ -22,6 +23,7 @@ function isAvailableDate(d: Date) {
 }
 
 export function Availability() {
+  const { t } = useTranslation()
   const { selectedDate, setSelectedDate } = useAppContext()
   const [viewMonth, setViewMonth] = useState(() => new Date())
   const sectionRef = useRef<HTMLElement>(null)
@@ -49,7 +51,7 @@ export function Availability() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.8 }}
             >
-              Availability
+              {t('availability.title')}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -57,14 +59,13 @@ export function Availability() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, delay: 0.05 }}
             >
-              Choose a night to begin — we’ll confirm details personally. Available
-              evenings glow softly in the calendar.
+              {t('availability.body')}
             </motion.p>
             <MapThumb style={{ y: float }}>
               <ResponsiveImg
                 src={imagePaths.map}
                 fallback={fallbacks.map}
-                alt="Florence and surrounding hills"
+                alt={t('availability.mapAlt')}
               />
             </MapThumb>
           </Copy>
@@ -78,7 +79,7 @@ export function Availability() {
             <CalHeader>
               <IconButton
                 type="button"
-                aria-label="Previous month"
+                aria-label={t('common.previousMonth')}
                 onClick={() => setViewMonth((m) => addMonths(m, -1))}
               >
                 ‹
@@ -86,7 +87,7 @@ export function Availability() {
               <MonthLabel>{format(viewMonth, 'MMMM yyyy')}</MonthLabel>
               <IconButton
                 type="button"
-                aria-label="Next month"
+                aria-label={t('common.nextMonth')}
                 onClick={() => setViewMonth((m) => addMonths(m, 1))}
               >
                 ›
@@ -122,7 +123,7 @@ export function Availability() {
             </DayGrid>
             <Legend>
               <span>
-                <i /> Available
+                <i /> {t('availability.legendAvailable')}
               </span>
             </Legend>
           </CalendarPanel>

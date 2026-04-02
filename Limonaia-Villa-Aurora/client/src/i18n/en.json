@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "hero": "Home",
+    "about": "About",
+    "gallery": "Gallery",
+    "availability": "Stay",
+    "contact": "Contact",
+    "book": "Book",
+    "reserveDates": "Reserve your dates"
+  },
+  "hero": {
+    "preTitle": "Florence · Tuscany",
+    "title": "Limonaia Villa Aurora",
+    "subtitle": "A private limonaia reborn as a serene retreat — light-filled rooms, gardens, and the quiet rhythm of the hills beyond the city.",
+    "cta": "Book Now",
+    "altImg": "Limonaia Villa Aurora — exterior at golden hour"
+  },
+  "about": {
+    "title": "A residence, not a hotel",
+    "body": "Every corner is composed for slow mornings and unhurried evenings — a private world minutes from Florence, anchored in Tuscan craft and modern ease.",
+    "cards": {
+      "light": {
+        "title": "Light & volume",
+        "body": "Tall windows frame the garden; plaster walls breathe with the day."
+      },
+      "craft": {
+        "title": "Crafted calm",
+        "body": "Materials chosen for touch — stone, oak, linen, and still air."
+      }
+    },
+    "amenitiesTitle": "Amenities",
+    "amenities": {
+      "pool": "Private pool",
+      "kitchen": "Chef’s kitchen",
+      "limonaia": "Garden limonaia"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Swipe through moments of the villa — interiors, light, and the garden in quiet motion.",
+    "altPrefix": "Villa Aurora — gallery"
+  },
+  "availability": {
+    "title": "Availability",
+    "body": "Choose a night to begin — we’ll confirm details personally. Available evenings glow softly in the calendar.",
+    "mapAlt": "Florence and surrounding hills",
+    "legendAvailable": "Available"
+  },
+  "contact": {
+    "title": "Contact",
+    "body": "Share your dates and wishes — our concierge replies with a tailored proposal, quietly and without hurry.",
+    "nameLabel": "Name",
+    "nameReq": "Please add your name",
+    "emailLabel": "Email",
+    "emailReq1": "Enter a valid email",
+    "emailReq2": "Email is required",
+    "phoneLabel": "Phone (optional)",
+    "messageLabel": "Message",
+    "messageMin": "A few more words help us prepare",
+    "messageReq": "Tell us how we can help",
+    "submitBtn": "Send inquiry",
+    "successToast": "Received — we’ll be in touch shortly."
+  },
+  "cta": {
+    "title": "Your Florence chapter begins here",
+    "body": "Reserve Limonaia Villa Aurora — private gardens, curated interiors, and the city’s art within reach.",
+    "button": "Check availability"
+  },
+  "footer": {
+    "tagline": "Limonaia Villa Aurora · Florence",
+    "subTagline": "Private stay · By invitation"
+  },
+  "common": {
+    "loading": "Loading",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "close": "Close",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "meta": {
+    "description": "Limonaia Villa Aurora — a luxury private villa near Florence. Book your stay.",
+    "title": "Limonaia Villa Aurora · Florence"
+  }
+}

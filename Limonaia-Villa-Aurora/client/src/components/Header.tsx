@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { ThemeToggle } from './ThemeToggle'
+import { LanguageToggle } from './ui/LanguageToggle'
 
 const MotionLink = motion.create(Link)
 
@@ -15,6 +17,7 @@ const navItems = [
 ] as const
 
 export function Header() {
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -36,10 +39,11 @@ export function Header() {
         <DesktopNav aria-label="Primary">
           {navItems.map((item) => (
             <NavLink key={item.id} to={`/#${item.id}`}>
-              {item.label}
+              {t(`nav.${item.id}`)}
             </NavLink>
           ))}
-          <CtaLink to="/#availability">Book</CtaLink>
+          <LanguageToggle />
+          <CtaLink to="/#availability">{t('nav.book')}</CtaLink>
         </DesktopNav>
 
         <HeaderActions>
@@ -86,11 +90,12 @@ export function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.05 * i, duration: 0.35 }}
                   >
-                    {item.label}
+                    {t(`nav.${item.id}`)}
                   </DrawerLink>
                 ))}
+                <LanguageToggle />
                 <DrawerCta to="/#availability" onClick={() => setOpen(false)}>
-                  Reserve your dates
+                  {t('nav.reserveDates')}
                 </DrawerCta>
               </DrawerInner>
             </Drawer>

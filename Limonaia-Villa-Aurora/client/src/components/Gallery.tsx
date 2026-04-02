@@ -9,10 +9,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import styled from 'styled-components'
 import { gallerySlides } from '../constants/images'
 import { ResponsiveImg } from './ResponsiveImg'
+import { useTranslation } from 'react-i18next'
 
 const AUTOPLAY_MS = 5200
 
 export function Gallery() {
+  const { t } = useTranslation()
   const count = gallerySlides.length
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
@@ -62,7 +64,7 @@ export function Gallery() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.75 }}
           >
-            Gallery
+            {t('gallery.title')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -70,8 +72,7 @@ export function Gallery() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.65, delay: 0.06 }}
           >
-            Swipe through moments of the villa — interiors, light, and the garden
-            in quiet motion.
+            {t('gallery.subtitle')}
           </motion.p>
         </HeaderBlock>
 
@@ -83,7 +84,7 @@ export function Gallery() {
         >
           <Arrow
             type="button"
-            aria-label="Previous image"
+            aria-label={t('common.previousImage')}
             onClick={() => go(index - 1)}
           >
             ‹
@@ -111,7 +112,7 @@ export function Gallery() {
                     <ResponsiveImg
                       src={slide.src}
                       fallback={slide.fallback}
-                      alt={slide.alt}
+                      alt={`${t('gallery.altPrefix')} ${index + 1}`}
                     />
                     <Dim />
                   </SlideCard>
@@ -122,7 +123,7 @@ export function Gallery() {
 
           <Arrow
             type="button"
-            aria-label="Next image"
+            aria-label={t('common.nextImage')}
             onClick={() => go(index + 1)}
           >
             ›
@@ -175,13 +176,13 @@ export function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               <LightboxPanel>
-                <CloseBtn type="button" onClick={close} aria-label="Close">
+                <CloseBtn type="button" onClick={close} aria-label={t('common.close')}>
                   ×
                 </CloseBtn>
                 <ResponsiveImg
                   src={gallerySlides[active].src}
                   fallback={gallerySlides[active].fallback}
-                  alt={gallerySlides[active].alt}
+                  alt={`${t('gallery.altPrefix')} ${active + 1}`}
                   loading="eager"
                 />
               </LightboxPanel>

@@ -1,18 +1,15 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-} from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import styled from 'styled-components'
 import { imagePaths, fallbacks } from '../constants/images'
 import { ResponsiveImg } from './ResponsiveImg'
+import { useTranslation } from 'react-i18next'
 
 const MotionLink = motion.create(Link)
 
 export function Hero() {
+  const { t } = useTranslation()
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -28,7 +25,7 @@ export function Hero() {
         <ResponsiveImg
           src={imagePaths.hero}
           fallback={fallbacks.hero}
-          alt="Limonaia Villa Aurora — exterior at golden hour"
+          alt={t('hero.altImg')}
           loading="eager"
         />
         <Overlay />
@@ -44,8 +41,8 @@ export function Hero() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          <Eyebrow>Florence · Tuscany</Eyebrow>
-          <Title>Limonaia Villa Aurora</Title>
+          <Eyebrow>{t('hero.preTitle')}</Eyebrow>
+          <Title>{t('hero.title')}</Title>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,8 +54,7 @@ export function Hero() {
           }}
         >
           <Subtitle>
-            A private limonaia reborn as a serene retreat — light-filled rooms,
-            gardens, and the quiet rhythm of the hills beyond the city.
+            {t('hero.subtitle')}
           </Subtitle>
         </motion.div>
         <motion.div
@@ -71,7 +67,7 @@ export function Hero() {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.98 }}
           >
-            Book Now
+            {t('hero.cta')}
           </BookNow>
         </motion.div>
       </Content>

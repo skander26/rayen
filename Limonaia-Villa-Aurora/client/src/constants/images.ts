@@ -3,7 +3,7 @@
  * Fallback URLs keep the experience polished before local files exist.
  */
 const FB = {
-  hero: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80',
+  hero: 'https://image2url.com/r2/default/images/1775143593045-1f7ed7bb-21c1-4f39-9953-458a16dd8485.jpg',
   about1: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
   about2: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
   amenity1: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80',
@@ -14,7 +14,7 @@ const FB = {
   g3: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80',
   g4: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80',
   g5: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80',
-  map: 'https://images.unsplash.com/photo-1529154036614-a60975f5c760?auto=format&fit=crop&w=1400&q=80',
+  map: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv210EklCThFEBcf1hGSSmwqTubNY4pZK3GQ&s',
 } as const
 
 export const imagePaths = {

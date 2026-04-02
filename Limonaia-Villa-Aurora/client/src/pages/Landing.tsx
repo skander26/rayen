@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react'
 import styled from 'styled-components'
 import { Header } from '../components/Header'
+import { useTranslation } from 'react-i18next'
 
 const Hero = lazy(async () => {
   const m = await import('../components/Hero')
@@ -28,10 +29,12 @@ const FinalCTA = lazy(async () => {
 })
 
 export function Landing() {
+  const { t } = useTranslation()
+
   return (
     <>
       <Header />
-      <Suspense fallback={<PageFallback role="status" aria-live="polite" />}>
+      <Suspense fallback={<PageFallback role="status" aria-live="polite" data-loading={t('common.loading')} />}>
         <Hero />
         <About />
         <Gallery />
@@ -40,8 +43,8 @@ export function Landing() {
         <FinalCTA />
       </Suspense>
       <Footer>
-        <span>Limonaia Villa Aurora · Florence</span>
-        <small>Private stay · By invitation</small>
+        <span>{t('footer.tagline')}</span>
+        <small>{t('footer.subTagline')}</small>
       </Footer>
     </>
   )
@@ -59,7 +62,7 @@ const PageFallback = styled.div`
   opacity: 0.4;
 
   &::before {
-    content: 'Loading';
+    content: attr(data-loading);
   }
 
   &::after {

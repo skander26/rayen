@@ -71,3 +71,7 @@ export default defineConfig([
   },
 ])
 ```
+
+## i18n / Translations
+
+To add a new language: create `src/i18n/{code}.json` and add it to the resources object in `src/i18n/index.js`.

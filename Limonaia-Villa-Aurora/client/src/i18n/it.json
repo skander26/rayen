@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "hero": "Home",
+    "about": "Chi Siamo",
+    "gallery": "Galleria",
+    "availability": "Soggiorno",
+    "contact": "Contatti",
+    "book": "Prenota",
+    "reserveDates": "Prenota le tue date"
+  },
+  "hero": {
+    "preTitle": "Firenze · Toscana",
+    "title": "Limonaia Villa Aurora",
+    "subtitle": "Una limonaia privata rinasce come rifugio sereno — stanze inondate di luce, giardini e il ritmo tranquillo delle colline oltre la città.",
+    "cta": "Prenota Ora",
+    "altImg": "Limonaia Villa Aurora — esterni al tramonto"
+  },
+  "about": {
+    "title": "Una residenza, non un hotel",
+    "body": "Ogni angolo è pensato per mattine lente e serate senza fretta — un mondo privato a pochi minuti da Firenze, radicato nell'artigianato toscano e nel comfort moderno.",
+    "cards": {
+      "light": {
+        "title": "Luce & volume",
+        "body": "Alte finestre incorniciano il giardino; le pareti a intonaco respirano con il giorno."
+      },
+      "craft": {
+        "title": "Calma artigianale",
+        "body": "Materiali scelti per il tatto — pietra, rovere, lino e aria immobile."
+      }
+    },
+    "amenitiesTitle": "Servizi",
+    "amenities": {
+      "pool": "Piscina privata",
+      "kitchen": "Cucina da chef",
+      "limonaia": "Limonaia in giardino"
+    }
+  },
+  "gallery": {
+    "title": "Galleria",
+    "subtitle": "Scorri i momenti della villa — interni, luce e il giardino in quieto movimento.",
+    "altPrefix": "Villa Aurora — galleria"
+  },
+  "availability": {
+    "title": "Disponibilità",
+    "body": "Scegli una notte per iniziare — confermeremo i dettagli personalmente. Le serate disponibili si illuminano sul calendario.",
+    "mapAlt": "Firenze e le colline circostanti",
+    "legendAvailable": "Disponibile"
+  },
+  "contact": {
+    "title": "Contatti",
+    "body": "Condivida le date e i Suoi desideri — il nostro concierge risponderà con una proposta su misura, con calma e senza fretta.",
+    "nameLabel": "Nome",
+    "nameReq": "Per favore inserisca il Suo nome",
+    "emailLabel": "Email",
+    "emailReq1": "Inserisca un'email valida",
+    "emailReq2": "L'email è obbligatoria",
+    "phoneLabel": "Telefono (opzionale)",
+    "messageLabel": "Messaggio",
+    "messageMin": "Qualche parola in più ci aiuta a prepararci",
+    "messageReq": "Ci dica come possiamo aiutarLa",
+    "submitBtn": "Invia richiesta",
+    "successToast": "Ricevuto — La contatteremo a breve."
+  },
+  "cta": {
+    "title": "Il Suo capitolo fiorentino inizia da qui",
+    "body": "Prenoti la Limonaia Villa Aurora — giardini privati, interni curati e l'arte della città a portata di mano.",
+    "button": "Cerca disponibilità"
+  },
+  "footer": {
+    "tagline": "Limonaia Villa Aurora · Firenze",
+    "subTagline": "Soggiorno privato · Su invito"
+  },
+  "common": {
+    "loading": "Caricamento",
+    "previousImage": "Immagine precedente",
+    "nextImage": "Immagine successiva",
+    "close": "Chiudi",
+    "previousMonth": "Mese precedente",
+    "nextMonth": "Mese successivo",
+    "lightMode": "Modalità chiara",
+    "darkMode": "Modalità scura",
+    "switchToLight": "Passa alla modalità chiara",
+    "switchToDark": "Passa alla modalità scura"
+  },
+  "meta": {
+    "description": "Limonaia Villa Aurora — una lussuosa villa privata vicino a Firenze. Prenota il tuo soggiorno.",
+    "title": "Limonaia Villa Aurora · Firenze"
+  }
+}

@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { useThemeMode } from '../hooks/useThemeMode'
+import { useTranslation } from 'react-i18next'
 
 export function ThemeToggle({ className }: { className?: string }) {
+  const { t } = useTranslation()
   const { mode, toggleTheme } = useThemeMode()
   const isDark = mode === 'dark'
 
@@ -10,8 +12,8 @@ export function ThemeToggle({ className }: { className?: string }) {
       type="button"
       className={className}
       onClick={toggleTheme}
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      title={isDark ? 'Light mode' : 'Dark mode'}
+      aria-label={isDark ? t('common.switchToLight') : t('common.switchToDark')}
+      title={isDark ? t('common.lightMode') : t('common.darkMode')}
     >
       <IconWrap aria-hidden>
         {isDark ? <SunIcon /> : <MoonIcon />}

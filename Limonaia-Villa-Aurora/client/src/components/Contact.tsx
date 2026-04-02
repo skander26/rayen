@@ -4,6 +4,8 @@ import * as yup from 'yup'
 import { motion } from 'framer-motion'
 import styled, { keyframes } from 'styled-components'
 import { useAppContext } from '../hooks/useAppContext'
+import { useTranslation } from 'react-i18next'
+import { useMemo } from 'react'
 
 const FormShell = styled.form`
   background: ${({ theme }) => theme.colors.surface};
@@ -15,16 +17,7 @@ const FormShell = styled.form`
 
 const MotionForm = motion.create(FormShell)
 
-const schema = yup.object({
-  name: yup.string().trim().required('Please add your name'),
-  email: yup.string().trim().email('Enter a valid email').required('Email is required'),
-  phone: yup.string().trim().default(''),
-  message: yup
-    .string()
-    .trim()
-    .min(12, 'A few more words help us prepare')
-    .required('Tell us how we can help'),
-})
+
 
 type FormValues = {
   name: string
@@ -34,7 +27,19 @@ type FormValues = {
 }
 
 export function Contact() {
+  const { t } = useTranslation()
   const { setContactDraft } = useAppContext()
+
+  const schema = useMemo(() => yup.object({
+    name: yup.string().trim().required(t('contact.nameReq')),
+    email: yup.string().trim().email(t('contact.emailReq1')).required(t('contact.emailReq2')),
+    phone: yup.string().trim().default(''),
+    message: yup
+      .string()
+      .trim()
+      .min(12, t('contact.messageMin'))
+      .required(t('contact.messageReq')),
+  }), [t])
   const {
     register,
     handleSubmit,
@@ -59,10 +64,9 @@ export function Contact() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
         >
-          <h2>Contact</h2>
+          <h2>{t('contact.title')}</h2>
           <p>
-            Share your dates and wishes — our concierge replies with a tailored
-            proposal, quietly and without hurry.
+            {t('contact.body')}
           </p>
         </motion.div>
 
@@ -74,7 +78,7 @@ export function Contact() {
           transition={{ duration: 0.75, delay: 0.05 }}
         >
           <Field>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">{t('contact.nameLabel')}</label>
             <Input
               id="name"
               $invalid={!!errors.name}
@@ -84,7 +88,7 @@ export function Contact() {
             {errors.name && <Err>{errors.name.message}</Err>}
           </Field>
           <Field>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t('contact.emailLabel')}</label>
             <Input
               id="email"
               type="email"
@@ -95,7 +99,7 @@ export function Contact() {
             {errors.email && <Err>{errors.email.message}</Err>}
           </Field>
           <Field>
-            <label htmlFor="phone">Phone (optional)</label>
+            <label htmlFor="phone">{t('contact.phoneLabel')}</label>
             <Input
               id="phone"
               type="tel"
@@ -106,7 +110,7 @@ export function Contact() {
             {errors.phone && <Err>{errors.phone.message}</Err>}
           </Field>
           <Field>
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">{t('contact.messageLabel')}</label>
             <TextArea
               id="message"
               rows={5}
@@ -117,9 +121,9 @@ export function Contact() {
           </Field>
 
           <SubmitRow>
-            <Submit type="submit">Send inquiry</Submit>
+            <Submit type="submit">{t('contact.submitBtn')}</Submit>
             {isSubmitSuccessful && (
-              <Thanks role="status">Received — we’ll be in touch shortly.</Thanks>
+              <Thanks role="status">{t('contact.successToast')}</Thanks>
             )}
           </SubmitRow>
         </MotionForm>
