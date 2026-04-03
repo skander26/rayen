@@ -10,11 +10,10 @@ import {
   startOfWeek,
   endOfWeek,
 } from 'date-fns'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { useAppContext } from '../hooks/useAppContext'
-import { imagePaths, fallbacks } from '../constants/images'
-import { ResponsiveImg } from './ResponsiveImg'
+
 import { useTranslation } from 'react-i18next'
 
 /** Demo availability: odd days of month available (replace with API). */
@@ -28,11 +27,6 @@ export function Availability() {
   const [viewMonth, setViewMonth] = useState(() => new Date())
   const sectionRef = useRef<HTMLElement>(null)
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start 0.9', 'center 0.5'],
-  })
-  const float = useTransform(scrollYProgress, [0, 1], [18, 0])
 
   const days = useMemo(() => {
     const start = startOfWeek(startOfMonth(viewMonth), { weekStartsOn: 1 })
@@ -61,13 +55,7 @@ export function Availability() {
             >
               {t('availability.body')}
             </motion.p>
-            <MapThumb style={{ y: float }}>
-              <ResponsiveImg
-                src={imagePaths.map}
-                fallback={fallbacks.map}
-                alt={t('availability.mapAlt')}
-              />
-            </MapThumb>
+
           </Copy>
 
           <CalendarPanel
@@ -171,19 +159,7 @@ const Copy = styled.div`
   }
 `
 
-const MapThumbShell = styled.div`
-  border-radius: ${({ theme }) => theme.radius.lg};
-  overflow: hidden;
-  box-shadow: ${({ theme }) => theme.shadow.soft};
 
-  img {
-    width: 100%;
-    aspect-ratio: 16 / 11;
-    object-fit: cover;
-  }
-`
-
-const MapThumb = motion.create(MapThumbShell)
 
 const CalendarPanelShell = styled.div`
   background: ${({ theme }) => theme.colors.bg};
