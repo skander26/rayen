@@ -14,7 +14,6 @@ const FB = {
   g3: 'https://image2url.com/r2/default/images/1775098176091-4bd9c4c3-29ae-431e-90bd-d82f0f7bc64f.jpg',
   g4: 'https://image2url.com/r2/default/images/1775098200218-319b896a-3771-4452-a1ff-7e90feb6ce5d.jpg',
   g5: 'https://image2url.com/r2/default/images/1775098345886-385ceb3b-480b-485d-89b9-d099b1fdab43.jpg',
-  map: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv210EklCThFEBcf1hGSSmwqTubNY4pZK3GQ&s',
 } as const
 
 export const imagePaths = {
