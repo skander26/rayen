@@ -2,13 +2,21 @@ import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import styled from 'styled-components'
 
-export function LanguageToggle({ className }: { className?: string }) {
+export function LanguageToggle({
+  className,
+  onLanguageChange,
+}: {
+  className?: string
+  /** Called after the language is switched (e.g. close mobile menu). */
+  onLanguageChange?: () => void
+}) {
   const { i18n } = useTranslation()
   const isIT = i18n.language === 'it'
 
   const toggle = () => {
     const next = isIT ? 'en' : 'it'
     i18n.changeLanguage(next)
+    onLanguageChange?.()
   }
 
   return (

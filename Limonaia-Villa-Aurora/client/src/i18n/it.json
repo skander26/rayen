@@ -6,7 +6,10 @@
     "availability": "Soggiorno",
     "contact": "Contatti",
     "book": "Prenota",
-    "reserveDates": "Prenota le tue date"
+    "reserveDates": "Prenota le tue date",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu",
+    "menu": "Navigazione del sito"
   },
   "hero": {
     "preTitle": "Firenze · Toscana",

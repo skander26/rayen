@@ -6,7 +6,10 @@
     "availability": "Stay",
     "contact": "Contact",
     "book": "Book",
-    "reserveDates": "Reserve your dates"
+    "reserveDates": "Reserve your dates",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Site navigation"
   },
   "hero": {
     "preTitle": "Florence · Tuscany",
